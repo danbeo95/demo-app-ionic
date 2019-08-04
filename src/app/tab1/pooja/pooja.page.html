@@ -1,0 +1,13 @@
+
+<ion-content>
+  <ion-slides class="slide" pager="true">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide" alt="" class="slide__image">
+    </ion-slide>
+  </ion-slides>
+
+  <!-- list view -->
+  <app-list-view [title]="'Pooja & Vratas'"></app-list-view>
+  <app-list-view [title]="'Muhurtam'"></app-list-view>
+  <app-list-view [title]="'Hommam'"></app-list-view>
+</ion-content>

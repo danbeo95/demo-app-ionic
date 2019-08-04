@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -12,8 +12,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+          },
+          {
+            path:'video-view/:id',
+            loadChildren:'../tab1/video-view/video-view.module#VideoViewPageModule'
           }
         ]
       },
@@ -39,15 +42,10 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'tab1',
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
   }
 ];
 
@@ -55,4 +53,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-list class="register-form" [formGroup]="registerForm">
+    <ion-item>
+      <ion-label position="floating">First name <span class="register-form__required-field">*</span></ion-label>
+      <ion-input formControlName="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last name <span class="register-form__required-field">*</span></ion-label>
+      <ion-input formControlName="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone number <span class="register-form__required-field">*</span></ion-label>
+      <ion-input formControlName="phoneNumber" type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email <span class="register-form__required-field">*</span></ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">OTP <span class="register-form__required-field">*</span></ion-label>
+      <ion-input formControlName="otp" type="tel"></ion-input>
+    </ion-item>
+    <div class="ion-margin-top">
+      <ion-button color="primary" expand="full" (click)="onClickSubmit()">Submit</ion-button>
+    </div>  
+  </ion-list>
+</ion-content>

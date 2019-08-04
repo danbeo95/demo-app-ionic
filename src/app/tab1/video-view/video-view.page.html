@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-title>video-view</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content>
+  <div class="ion-padding ion-text-center" *ngIf="!video">
+    <ion-spinner></ion-spinner>
+  </div>
+  <div *ngIf="video" class="video">
+    <iframe width="806" height="453" [src]="'https://www.youtube.com/embed/'+videoId | safeUrl" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      class="iframe"></iframe>
+    <div class="video__title">
+      {{video.snippet.title}}
+    </div>
+
+    <!-- related video -->
+    <ion-list>
+      <app-list-videos [videos]="videosOther$" [title]="'Other videos'" (videoClick)="onClickOtherVideo($event)">
+      </app-list-videos>
+    </ion-list>
+  </div>
+
+</ion-content>

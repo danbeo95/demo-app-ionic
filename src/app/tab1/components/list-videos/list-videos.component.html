@@ -1,0 +1,10 @@
+<ion-list>
+  <h4 style="margin:0px;padding:10px">{{title}}</h4>
+  <ion-card *ngFor="let video of videos$ | async" class="video ion-activatable" (click)="onClickVideo(video)">
+    <ion-ripple-effect></ion-ripple-effect>
+    <img [src]="video.snippet.thumbnails.default.url" alt="" class="video__image">
+    <div class="video__description">
+      {{video.snippet.title}}
+    </div>
+  </ion-card>
+</ion-list>

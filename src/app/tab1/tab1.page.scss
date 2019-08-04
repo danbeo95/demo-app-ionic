@@ -2,3 +2,15 @@
   max-height: 35vh;
   overflow: hidden;
 }
+ion-tab-bar{
+    --background:orange;
+}
+ion-tab-button{
+  color:#000;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.tab-selected{
+  color:#fff;
+}
+

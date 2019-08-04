@@ -1,0 +1,11 @@
+.list-view{
+    border-bottom: 1px solid gray;
+}
+
+.list-view__container{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.list-view__image{
+  height: 50px;
+}
